@@ -1,84 +1,305 @@
 <!-- Personal Website: Nidhi Desai-->
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nidhi Desai</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
         body {
-            background-color:  rgb(79, 109, 80);
-            font-family: 'Times New Roman', Times, serif, sans-serif;
-            color: white;
+            background-color: #eae7dc;
+            color: #3f3f3f;
             margin: 0;
             padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+        }
+
+        .sparkle-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px 2px #ffffff;
+            animation: sparkle 2s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0.5;
+                transform: scale(0.5);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         .header {
-            text-align: center;
+            background-color: #d8c3a5;
+            color: #3f3f3f;
             padding: 20px;
+            text-align: center;
+            z-index: 1;
+            position: relative;
+        }
+
+        .header .title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #d8c3a5;
+            z-index: 1;
+        }
+
+        .navbar li {
+            float: left;
+        }
+
+        .navbar a {
+            display: block;
+            color: #3f3f3f;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #eae7dc;
+            color: #3f3f3f;
+        }
+
+        .mainsum {
+            background-color: #eae7dc;
+            color: #3f3f3f;
+            padding: 80px 10px;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+            position: relative;
+            z-index: 1;
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
+            background-color: #eae7dc;
+            color: #3f3f3f;
             padding: 20px;
+            margin: 20px auto;
+            max-width: 1000px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
         }
-        /*link color*/
-        a {
-            color: rgb(4, 50, 4);
+
+        .highlight {
+            color: #8e8d8a;
+        }
+
+        .project {
+            background-color: #d8c3a5;
+            color: #3f3f3f;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project:hover {
+            transform: scale(1.02);
+        }
+
+        .btn {
+            background-color: #d8c3a5;
+            color: #3f3f3f;
+            padding: 10px 20px;
             text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            position: relative;
+            z-index: 1;
         }
 
-        /* link on hover */
-        a:hover {
-            text-decoration: underline;
+        .btn:hover {
+            background-color: #eae7dc;
+            color: #000;
         }
 
+        .contact {
+            background-color: #d8c3a5;
+            color: #3f3f3f;
+            padding: 50px 0;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-icons a {
+            color: #3f3f3f;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #000;
+        }
+
+        .footer {
+            background-color: #8e8d8a;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>NIDHI DESAI</h1>
-        
+    <header class="header">
+        <div class="title">
+            <h1>Nidhi Desai</h1>
+        </div>
+        <div class="title">
+            <h4>Software Engineer</h4>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="sparkle-container"></div>
+
+    <section class="mainsum">
+        <div class="summary">
+            <h2>Welcome to my website</h2>
+            <p>I am a passionate software engineer with a focus on <span class="highlight">Java, Python, and Web Development</span>. Explore my journey below!</p>
+        </div>
+    </section>
+
+    <div class="container" id="about">
+        <section class="about-me">
+            <h2>About Me</h2>
+            <p>I am a dedicated and creative software engineer, currently pursuing my Bachelor's degree in Computer Science. My journey involves tackling complex problems and building innovative solutions. I thrive in collaborative environments and am eager to contribute my skills to impactful projects. My goal is to leverage my expertise in <span class="highlight">Java, Python, and Web Development</span> to drive technological advancements and deliver high-quality software solutions.</p>
+        </section>
+
+        <section class="skills" id="skills">
+            <h2>Technical Skills</h2>
+            <ul>
+                <li>Java</li>
+                <li>Python</li>
+                <li>C++</li>
+                <li>Web Development (HTML, CSS, SQL, JavaScript)</li>
+                <li>Testing and Debugging</li>
+                <li>Agile Methodologies</li>
+                <li>Version Control (Git)</li>
+            </ul>
+            <h2>Soft Skills</h2>
+            <ul>
+                <li>Problem Solving</li>
+                <li>Communication</li>
+                <li>Adaptability</li>
+                <li>Time Management</li>
+                <li>Team Collaboration</li>
+            </ul>
+        </section>
+
+        <section class="projects" id="projects">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>AstroTeach</h3>
+                <p>A fun website to learn about our solar system! Implemented using HTML, CSS, and JavaScript, this project showcases my ability to create engaging and educational web applications.</p>
+                <a href="#" class="btn">View Project</a>
+            </div>
+            <div class="project">
+                <h3>AI Integrated Agenda</h3>
+                <p>A class project where I created an AI-integrated agenda webpage using Python and Flask. This project highlights my skills in AI, web development, and integrating complex functionalities.</p>
+                <a href="#" class="btn">View Project</a>
+            </div>
+        </section>
+
+        <section class="education" id="education">
+            <h2>Education</h2>
+            <h4>Towson University</h4>
+            <p>Bachelor of Science in Computer Science<br>Graduated: May 2024</p>
+            <h4>University of Maryland, Baltimore County</h4>
+            <p>Bachelor of Science in Psychology (Minor in Biology)<br>Graduated: May 2021</p>
+        </section>
     </div>
-    <svg height="10" width="3000">
-            <line x1="0" y1="0" x2="1600" y2="0" style="stroke:rgb(4,50,4);stroke-width:5" />
-          </svg>
-    <div class="container">
-        <!-- Personal Paragraph -->
-        <h2>About Me</h2>
-        <p>I am a motivated computer science student who is excited to start my career in the field. With a background in coding using Java, Python, and C++. My ability to work both independently and as part of a team has been developed through academic studies and professional experiences. As I pursue my Bachelor's degree in Computer Science at Towson University, I am eager to apply my knowledge to real-world challenges and continue growing as a software engineer.</p>
+
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out! I am open to discussing new opportunities and collaborations.</p>
         
-        <!-- Course Information -->
-        <h2>Courses Taken</h2>
-        <ul>
-            <li>COSC 336: Data Structures and Algorithms</li>
-            <li>COSC 412: Software Engineering</li>
-            <li>COSC 435: Mobile Application Development</li>
-            <li>COSC 455: Programming Languages: Design & Implementation</li>
-            <li>COSC 457: Database Management Systems</li>
-            <li>COSC 484: Web-based Programming</li>
-        </ul>
-       
-        <!--Personal Information links -->
-        <h2>Information</h2>
-        <ul>
-            <li><a href="https://docs.google.com/document/d/e/2PACX-1vR-XIEBOvqHI0aG2u4kMtzb8hbbeiDIvviEJ2TgegN2NkIyrDznhTTvaRoEiJz0o9Sp8uoCUig2LjnR/pub" >Resume</a></li>
-            <li><a href="https://github.com/ndesai97">GitHub Profile</a></li>
-            <li><a href="mailto:nidhidesai0609@gmail.com">nidhidesai0609@gmail.com</a></li>
-        </ul>
-        
-        <!-- Project Information -->
-        <!-- <h2>Projects</h2>
-        <ul>
-            <li><a href="https://github.com/bwhitt7/cosc484website" >Web-based Programming Team Project</a></li>
-            <li><a href="https://github.com/tjoshu1/Team5Prodject" >Team Project</a></li>
-        </ul>
-    -->
-   
-    </div> 
-    <svg height="10" width="3000">
-        <line x1="0" y1="0" x2="1600" y2="0" style="stroke:rgb(4,50,4);stroke-width:5" />
-      </svg>
+        <div class="social-icons">
+            <a href="mailto:nidhidesai0609@gmail.com" class="_blank"><i class="far fa-envelope"></i></a>
+            <a href="https://github.com/ndesai97" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/nidhi-desai-29b860202/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://instagram.com/n_desai14/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Nidhi Desai</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sparkleContainer = document.querySelector('.sparkle-container');
+            const documentHeight = document.body.scrollHeight;
+
+            for (let i = 0; i < 100; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.classList.add('sparkle');
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * documentHeight;
+                sparkle.style.left = `${x}px`;
+                sparkle.style.top = `${y}px`;
+                sparkle.style.animationDelay = `${Math.random() * 2}s`;
+                sparkleContainer.appendChild(sparkle);
+            }
+        });
+    </script>
 </body>
 </html>
